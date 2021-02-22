@@ -1,0 +1,39 @@
+<script>
+  //loader progress bar  เกมส์ 02/22/21
+  var pg=0; 
+  document.onreadystatechange = function()
+  {
+    if(document.readyState=="interactive")
+    {
+      $('.content').css("padding-top",'0.54%');
+      var allElem = $("*");
+      var length = allElem.length;
+      for(var i=0;i<length;i++) {
+        set_elem(allElem[i],length);
+        
+      }
+    }
+  }
+  
+  function  set_elem(elem,total) {
+    var percent_inc = 100 / total; //equally divide 100 among all elements
+    
+  //if element is loaded
+    if($(elem).length==1) {
+      $('#bar').animate({width:pg+percent_inc+"%"},5,function(){
+        if(document.getElementById("bar").style.width=="100%") {
+          //hide the bar
+          $('#bar').fadeOut(350);
+          $('.content').css("padding-top",'0%');
+        /*
+                $("#loadding").hide();
+                $("div").removeClass("modal-backdrop");
+        */
+        }
+      });
+      //update the previous width value 
+      pg = pg+percent_inc;
+    }
+  }
+  
+  </script>
