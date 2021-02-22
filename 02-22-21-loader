@@ -1,3 +1,14 @@
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm">
+          <div id="bar"></div>
+          <div class="content"></div>
+        </div>
+      </div>
+    </div>
+//menu.blade.php
+
+//member.balde.php
 <script>
   //loader progress bar  เกมส์ 02/22/21
   var pg=0; 
